@@ -25,6 +25,7 @@
       margin-bottom: 20px;
     }
     .hero h1 { font-size: 3rem; }
+    .hero h3 { font-size: 1.25rem; font-weight: 400; margin-top: 10px; color: #f1c40f; }
     .timeline { position: relative; margin-left: 20px; }
     .timeline::before {
       content: '';
@@ -41,6 +42,9 @@
     body.dark-mode .navbar { background-color: #1e1e1e; }
     body.dark-mode .footer { background-color: #1e1e1e; color: #aaa; }
     body.dark-mode .bg-light { background-color: #2c2c2c !important; }
+
+    .progress { height: 20px; margin-bottom: 15px; }
+    .progress-bar { font-size: 0.85rem; }
   </style>
 </head>
 <body>
@@ -70,8 +74,9 @@
     <div class="container" data-aos="fade-up">
       <img src="Kosay Personal Photo Pic.jpg" alt="Kosay Alassaf">
       <h1 data-aos="zoom-in">Kosay Alassaf</h1>
-      <p data-aos="fade-up" data-aos-delay="200">Experienced IT Professional | Software Developer | Data & Workflow Systems Expert</p>
-      <a href="Kosay Alassaf-CV25.pdf" class="btn btn-light btn-lg" download data-aos="fade-up" data-aos-delay="400">Download CV</a>
+      <h3 data-aos="fade-up" data-aos-delay="150">Founder of Pro-S | "As Smart As Simple"</h3>
+      <p data-aos="fade-up" data-aos-delay="300">Experienced IT Professional | Software Developer | Data & Workflow Systems Expert</p>
+      <a href="Kosay Alassaf-CV25.pdf" class="btn btn-light btn-lg" download data-aos="fade-up" data-aos-delay="500">Download CV</a>
     </div>
   </section>
 
@@ -104,10 +109,39 @@
     <div class="container" data-aos="fade-up">
       <h2>Skills</h2>
       <div class="row">
-        <div class="col-md-3" data-aos="zoom-in"><h5>Programming</h5><p>C#, ASP.NET, Python, JavaScript</p></div>
-        <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100"><h5>Databases</h5><p>SQL Server, MySQL, Data Modeling</p></div>
-        <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200"><h5>Tools</h5><p>Power BI, Tableau, GitHub, Docker</p></div>
-        <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300"><h5>Networking</h5><p>CCNA, CCNP, Windows Server</p></div>
+        <div class="col-md-6" data-aos="zoom-in">
+          <h5>Programming & Frameworks</h5>
+          <div class="progress"><div class="progress-bar bg-primary" style="width:95%">C# / .NET Core</div></div>
+          <div class="progress"><div class="progress-bar bg-success" style="width:85%">Python</div></div>
+          <div class="progress"><div class="progress-bar bg-warning text-dark" style="width:80%">JavaScript / TypeScript</div></div>
+          <div class="progress"><div class="progress-bar bg-info text-dark" style="width:75%">React / Angular</div></div>
+        </div>
+
+        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
+          <h5>Databases & Data Management</h5>
+          <div class="progress"><div class="progress-bar bg-primary" style="width:95%">SQL Server</div></div>
+          <div class="progress"><div class="progress-bar bg-success" style="width:85%">MySQL / PostgreSQL</div></div>
+          <div class="progress"><div class="progress-bar bg-warning text-dark" style="width:70%">MongoDB / NoSQL</div></div>
+          <div class="progress"><div class="progress-bar bg-info text-dark" style="width:65%">Data Modeling & BI Tools</div></div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
+          <h5>DevOps & Tools</h5>
+          <div class="progress"><div class="progress-bar bg-primary" style="width:80%">Git / GitHub</div></div>
+          <div class="progress"><div class="progress-bar bg-success" style="width:70%">Docker</div></div>
+          <div class="progress"><div class="progress-bar bg-warning text-dark" style="width:65%">CI/CD (GitHub Actions)</div></div>
+          <div class="progress"><div class="progress-bar bg-info text-dark" style="width:60%">Kubernetes (Basic)</div></div>
+        </div>
+
+        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="300">
+          <h5>Other Technologies & Cloud</h5>
+          <div class="progress"><div class="progress-bar bg-primary" style="width:85%">Power BI / Tableau</div></div>
+          <div class="progress"><div class="progress-bar bg-success" style="width:80%">WordPress / CMS</div></div>
+          <div class="progress"><div class="progress-bar bg-warning text-dark" style="width:75%">RESTful APIs / Postman</div></div>
+          <div class="progress"><div class="progress-bar bg-info text-dark" style="width:75%">Cloud Computing (AWS, Azure, GCP)</div></div>
+        </div>
       </div>
     </div>
   </section>
