@@ -24,11 +24,15 @@
     .timeline { position: relative; margin-left: 20px; }
     .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #2980b9; }
     .timeline-item { margin: 20px 0; padding-left: 30px; }
-    .footer { background: #2c3e50; color: #bdc3c7; text-align: center; padding: 20px 0; }
+    .footer { background: #2c3e50; color: #bdc3c7; text-align: center; padding: 20px 0; transition: background 0.3s; }
     .skills-list ul { list-style: none; padding: 0; }
     .skills-list li { margin-bottom: 10px; font-size: 1rem; transition: transform 0.3s, background 0.3s; padding: 8px; border-radius: 8px; }
     .skills-list li:hover { transform: translateX(5px); background: rgba(41, 128, 185, 0.1); }
     .skills-list i { margin-right: 10px; color: #2980b9; }
+    body, body.dark-mode { background: #121212; color: #f5f5f5; }
+    .navbar { background-color: #1e1e1e; }
+    .footer { background-color: #1e1e1e; color: #aaa; }
+    .bg-light { background-color: #2c2c2c !important; }
   </style>
 </head>
 <body class="dark-mode">
@@ -41,12 +45,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link lang" data-en="About" data-de="Über mich" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link lang" data-en="Experience" data-de="Berufserfahrung" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link lang" data-en="Skills" data-de="Fähigkeiten" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link lang" data-en="Projects" data-de="Projekte" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link lang" data-en="Education" data-de="Ausbildung" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link lang" data-en="Contact" data-de="Kontakt" href="#contact">Contact</a></li>
+          <li class="nav-item"><button id="themeToggle" class="btn btn-sm btn-outline-light ms-3">☀️</button></li>
           <li class="nav-item"><button id="langToggle" class="btn btn-sm btn-outline-light ms-3">🇩🇪 Deutsch</button></li>
         </ul>
       </div>
@@ -58,7 +63,7 @@
     <div class="container" data-aos="fade-up">
       <img src="Kosay Personal Photo Pic.jpg" alt="Kosay Alassaf">
       <h1 class="lang" data-en="Kosay Alassaf" data-de="Kosay Alassaf">Kosay Alassaf</h1>
-      <h3 class="lang" data-en="Founder of Pro-S | \"As Smart As Simple\"" data-de="Gründer von Pro-S | \"So smart wie einfach\"">Founder of Pro-S | "As Smart As Simple"</h3>
+      <h3 class="lang" data-en="Founder of Pro-S | 'As Smart As Simple'" data-de="Gründer von Pro-S | 'So smart wie einfach'">Founder of Pro-S</h3>
       <p class="lang" data-en="Experienced IT Professional | Software Developer | Data & Workflow Systems Expert" data-de="Erfahrener IT-Experte | Softwareentwickler | Spezialist für Daten- & Workflow-Systeme">Experienced IT Professional</p>
       <a href="https://pro-sss.com" class="btn btn-light btn-lg lang" data-en="Visit Pro-S website" data-de="Zur Pro-S Website">Visit Pro-S website</a>
     </div>
@@ -68,7 +73,7 @@
   <section id="about">
     <div class="container" data-aos="fade-right">
       <h2 class="lang" data-en="About Me" data-de="Über mich">About Me</h2>
-      <p class="lang" data-en="With 15+ years of expertise in software development, information management, and project leadership, I specialize in designing custom IT solutions, data analysis platforms, and workflow systems for NGOs, government institutions, and universities." data-de="Mit über 15 Jahren Erfahrung in Softwareentwicklung, Informationsmanagement und Projektleitung spezialisiere ich mich auf die Entwicklung maßgeschneiderter IT-Lösungen, Datenanalyseplattformen und Workflowsysteme für NGOs, Regierungsinstitutionen und Universitäten.">About text</p>
+      <p class="lang" data-en="With 15+ years of expertise in software development, information management, and project leadership, I specialize in designing custom IT solutions, data analysis platforms, and workflow systems for NGOs, government institutions, and universities." data-de="Mit über 15 Jahren Erfahrung in der Softwareentwicklung, im Informationsmanagement und in der Projektleitung spezialisiere ich mich auf maßgeschneiderte IT-Lösungen, Datenanalyseplattformen und Workflowsysteme für NGOs, staatliche Institutionen und Universitäten.">About text</p>
     </div>
   </section>
 
@@ -77,30 +82,75 @@
     <div class="container" data-aos="fade-left">
       <h2 class="lang" data-en="Experience" data-de="Berufserfahrung">Experience</h2>
       <div class="timeline">
-        <div class="timeline-item lang" data-en="<strong>Team Leader</strong> – Pro S (Startup) (2020–Present)" data-de="<strong>Teamleiter</strong> – Pro S (Startup) (2020–heute)">Experience 1</div>
-        <div class="timeline-item lang" data-en="<strong>Information Management Officer</strong> – SSSD (2012–Present)" data-de="<strong>Informationsmanagement-Beauftragter</strong> – SSSD (2012–heute)">Experience 2</div>
+        <div class="timeline-item lang" data-en="<strong>Team Leader</strong> – Pro S (Startup) (2020–Present)" data-de="<strong>Teamleiter</strong> – Pro S (Startup) (2020–Heute)">Experience 1</div>
+        <div class="timeline-item lang" data-en="<strong>Information Management Officer</strong> – SSSD (2012–Present)" data-de="<strong>Informationsmanagement-Beauftragter</strong> – SSSD (2012–Heute)">Experience 2</div>
+        <div class="timeline-item lang" data-en="<strong>Web Developer</strong> – Antiochian House of Studies (2022–Present)" data-de="<strong>Webentwickler</strong> – Antiochian House of Studies (2022–Heute)">Experience 3</div>
+        <div class="timeline-item lang" data-en="<strong>Freelance Software Developer</strong> – (2008–Present)" data-de="<strong>Freiberuflicher Softwareentwickler</strong> – (2008–Heute)">Experience 4</div>
+        <div class="timeline-item lang" data-en="<strong>Computer Science Lecturer</strong> – Damascus University (2013–Present)" data-de="<strong>Dozent für Informatik</strong> – Universität Damaskus (2013–Heute)">Experience 5</div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section (short example) -->
+  <!-- Skills Section -->
   <section id="skills">
     <div class="container skills-list" data-aos="fade-up">
       <h2 class="lang" data-en="Skills" data-de="Fähigkeiten">Skills</h2>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-right">
           <h5 class="lang" data-en="Programming Languages & Frameworks" data-de="Programmiersprachen & Frameworks">Programming</h5>
           <ul>
             <li class="lang" data-en="C#, .NET Core, ASP.NET MVC/Web API" data-de="C#, .NET Core, ASP.NET MVC/Web API">Skill</li>
+            <li class="lang" data-en="Desktop Application Development" data-de="Desktop-Anwendungsentwicklung">Skill</li>
+            <li class="lang" data-en="JavaScript, TypeScript" data-de="JavaScript, TypeScript">Skill</li>
+            <li class="lang" data-en="React" data-de="React">Skill</li>
           </ul>
-        </div>
-        <div class="col-md-6">
+
           <h5 class="lang" data-en="Cloud & DevOps" data-de="Cloud & DevOps">Cloud</h5>
           <ul>
-            <li class="lang" data-en="Azure, AWS, GCP" data-de="Azure, AWS, GCP">Skill</li>
+            <li class="lang" data-en="Cloud Platforms: Microsoft Azure, AWS, GCP" data-de="Cloud-Plattformen: Microsoft Azure, AWS, GCP">Skill</li>
+            <li class="lang" data-en="Docker, Kubernetes" data-de="Docker, Kubernetes">Skill</li>
+            <li class="lang" data-en="CI/CD: GitHub Actions, Azure DevOps, Jenkins" data-de="CI/CD: GitHub Actions, Azure DevOps, Jenkins">Skill</li>
+          </ul>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-left">
+          <h5 class="lang" data-en="Databases & Data Management" data-de="Datenbanken & Datenmanagement">Databases</h5>
+          <ul>
+            <li class="lang" data-en="SQL Server, PostgreSQL, MySQL" data-de="SQL Server, PostgreSQL, MySQL">Skill</li>
+            <li class="lang" data-en="BI Tools: Power BI, Tableau" data-de="BI-Tools: Power BI, Tableau">Skill</li>
+          </ul>
+
+          <h5 class="lang" data-en="Tools & Methodologies" data-de="Tools & Methoden">Tools</h5>
+          <ul>
+            <li class="lang" data-en="Git, GitHub, GitFlow" data-de="Git, GitHub, GitFlow">Skill</li>
+            <li class="lang" data-en="RESTful APIs, Postman, Swagger/OpenAPI" data-de="RESTful APIs, Postman, Swagger/OpenAPI">Skill</li>
+            <li class="lang" data-en="HTML5, CSS3, WordPress" data-de="HTML5, CSS3, WordPress">Skill</li>
+            <li class="lang" data-en="Agile, Scrum, Kanban" data-de="Agile, Scrum, Kanban">Skill</li>
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="bg-light">
+    <div class="container" data-aos="fade-up">
+      <h2 class="lang" data-en="Projects" data-de="Projekte">Projects</h2>
+      <ul>
+        <li class="lang" data-en="AI-Powered Humanitarian Decision System (2024–ongoing)" data-de="KI-gestütztes humanitäres Entscheidungssystem (2024–laufend)">Project</li>
+        <li class="lang" data-en="Earthquake Relief Workflow System (2023)" data-de="Arbeitsablaufsystem für Erdbebenhilfe (2023)">Project</li>
+        <li class="lang" data-en="Community Data Management System (2013–present)" data-de="Community-Datenmanagementsystem (2013–heute)">Project</li>
+        <li class="lang" data-en="HR & Payroll Systems (2020–present)" data-de="HR- & Gehaltssysteme (2020–heute)">Project</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <div class="container" data-aos="fade-right">
+      <h2 class="lang" data-en="Education" data-de="Ausbildung">Education</h2>
+      <p class="lang" data-en="<strong>Master's in Web Science</strong> – Syrian Virtual University (2023–Present)" data-de="<strong>Master in Web Science</strong> – Syrian Virtual University (2023–Heute)">Edu 1</p>
+      <p class="lang" data-en="<strong>Bachelor's in Computer & Automation Engineering</strong> – Damascus University (2006–2012)" data-de="<strong>Bachelor in Computer & Automation Engineering</strong> – Universität Damaskus (2006–2012)">Edu 2</p>
     </div>
   </section>
 
@@ -109,6 +159,9 @@
     <div class="container" data-aos="fade-up">
       <h2 class="lang" data-en="Contact" data-de="Kontakt">Contact</h2>
       <p>Email: <a href="mailto:kosayalassaf@gmail.com">kosayalassaf@gmail.com</a></p>
+      <p class="lang" data-en="Phone: +963 966 654 441" data-de="Telefon: +963 966 654 441">Phone</p>
+      <p><a href="https://www.linkedin.com/in/kosay-assaf-58a91690" target="_blank" class="lang" data-en="LinkedIn: View Profile" data-de="LinkedIn: Profil ansehen">LinkedIn</a></p>
+      <p><a href="https://pro-sss.com" target="_blank" class="lang" data-en="Website: pro-sss.com" data-de="Webseite: pro-sss.com">Website</a></p>
     </div>
   </section>
 
@@ -120,9 +173,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({ duration: 1000, once: true });
+
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      themeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+
     const langToggle = document.getElementById('langToggle');
     let currentLang = 'en';
-
     langToggle.addEventListener('click', () => {
       currentLang = currentLang === 'en' ? 'de' : 'en';
       document.querySelectorAll('.lang').forEach(el => {
